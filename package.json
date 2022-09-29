@@ -1,0 +1,36 @@
+{
+  "name": "natours-html-css",
+  "version": "1.0.0",
+  "description": "a hands on project to learn advanced css",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass  prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasanqc/natours-html-css.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "responsive"
+  ],
+  "author": "Sasan Salehzadeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasanqc/natours-html-css/issues"
+  },
+  "homepage": "https://github.com/sasanqc/natours-html-css#readme",
+  "dependencies": {
+    "sass": "^1.55.0",
+    "npm-run-all": "^4.1.1",
+    "autoprefixer": "^7.1.4",
+    "postcss-cli": "^4.1.1"
+  }
+}
